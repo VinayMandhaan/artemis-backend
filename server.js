@@ -15,6 +15,10 @@ app.use(cors());
 
 connectDB();
 
+app.get("/", (req, res) => {
+    res.send("API Running");
+});
+
 app.listen(PORT, () => {
     console.log(`Server Started on Port ${PORT}`);
 });
