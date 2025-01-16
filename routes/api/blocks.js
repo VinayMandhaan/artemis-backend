@@ -41,4 +41,19 @@ router.post("/", [
 })
 
 
+router.get('/', async (req, res) => {
+    try {
+        let blocks = await Blocks.find();
+        blocks = blocks.map(block => {
+
+            block.icon = baseUrl(req) + block.icon
+            return block
+        })
+        res.status(200).json({ blocks });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
+
 module.exports = router
