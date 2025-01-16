@@ -5,11 +5,11 @@ const router = express.Router();
 
 router.post("/", async (req, res) => {
     try {
-        const { blockIds } = req.body
+        const { blockId } = req.body
 
-        const blocks = await Block.find({ '_id': { $in: blockIds } })
+        const blocks = await Block.find({ '_id': { $in: blockId } })
 
-        if (blocks.length !== blockIds.length) {
+        if (blocks.length !== blockId.length) {
             return res.status(400).json({ message: 'Some blocks were not found' })
         }
 
@@ -27,7 +27,7 @@ router.post("/", async (req, res) => {
         }
 
         const newItem = new Items({
-            blocks: blockIds
+            blocks: blockId
         })
 
         await newItem.save()
