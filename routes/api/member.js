@@ -164,41 +164,5 @@ router.get('/', async (req, res) => {
 })
 
 
-router.get('/user-modules', async (req, res) => {
-    try {
-        const newMembers = await User_Modules.find().populate('member').populate('modules.moduleId')
-        const count = await User_Modules.aggregate([
-            {
-                $addFields: {
-                    completedCount: {
-                        $size: {
-                            $filter: {
-                                input: { $arrayElemAt: ["$modules.submodules", 0] }, // Assuming `modules.submodules` is an array
-                                as: "submodule",
-                                cond: { $eq: ["$$submodule.completed", true] }
-                            }
-                        }
-                    }
-                }
-            },
-            {
-                $project: {
-                    completedCount: 1 // Only include the completedCount field
-                }
-            }
-        ])
-
-        let members = {
-            data: newMembers,
-            count
-        }
-        res.status(200).json({ members: members })
-    } catch (error) {
-        res.status(500).json({ error: error.message })
-    }
-})
-
-
-
 
 module.exports = router

@@ -33,6 +33,8 @@ app.use('/api/items', require('./routes/api/items'))
 app.use('/api/module', require('./routes/api/module'))
 app.use('/api/coach', require('./routes/api/coach'))
 app.use('/api/member', require('./routes/api/member'))
+app.use('/api/user-module', require('./routes/api/user_module'))
+
 
 
 
