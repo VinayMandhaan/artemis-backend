@@ -2,7 +2,6 @@ const express = require("express");
 const Module = require("../../models/Module");
 const router = express.Router();
 const { check, validationResult } = require('express-validator')
-const { baseUrl } = require('../../utils/baseUrl')
 
 
 router.post("/", [

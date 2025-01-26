@@ -31,6 +31,8 @@ app.get("/uploads/images/:name", (req, res) => {
 app.use('/api/blocks', require('./routes/api/blocks'))
 app.use('/api/items', require('./routes/api/items'))
 app.use('/api/module', require('./routes/api/module'))
+app.use('/api/coach', require('./routes/api/coach'))
+
 
 
 app.listen(PORT, () => {

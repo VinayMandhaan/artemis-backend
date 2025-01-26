@@ -5,10 +5,6 @@ const CoachSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    description: {
-        type: String,
-        required: true
-    },
     email: {
         type: String,
         required: true,
@@ -21,7 +17,7 @@ const CoachSchema = new mongoose.Schema({
         type: String
     },
     position: {
-        type: String
+        type: String    
     },
     experience: {
         type: String
