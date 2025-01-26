@@ -20,10 +20,6 @@ const MemberSchema = new mongoose.Schema({
     program: {
         type: String
     },
-    modules: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'module'
-    }],
     coach: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'coach'

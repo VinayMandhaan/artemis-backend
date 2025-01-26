@@ -11,10 +11,6 @@ const SubModuleSchema = new mongoose.Schema({
     },
     isVideo: {
         type: Boolean
-    },
-    completed: {
-        type: Boolean,
-        default: false
     }
 });
 
