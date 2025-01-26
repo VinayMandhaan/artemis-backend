@@ -10,7 +10,7 @@
 1. Member
 2. Module
 3. Coach
-4. User_Modules
+4. User Modules
 
 #### Aggregation To Calculate Total Completed Task Is Added In The User Module API
 
