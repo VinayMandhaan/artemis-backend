@@ -8,7 +8,9 @@ const SubModuleSchema = new mongoose.Schema({
     },
     description: {
         type: String,
-        required: true
+    },
+    isVideo: {
+        type: Boolean
     },
     completed: {
         type: Boolean,
